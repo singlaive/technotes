@@ -8,8 +8,8 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Murphy's ideas 
-tagline: Site Tagline
+title : 抠钉客 
+tagline: Tech notes 
 author :
   name : Murphy Meng
   email : singlaive@gmail.com
@@ -54,7 +54,7 @@ JB :
   #   - Only the following values are falsy: ["", null, false]
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : false 
+  BASE_PATH : /technotes 
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -80,7 +80,7 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : false#disqus
     disqus :
       short_name : jekyllbootstrap
     livefyre :
