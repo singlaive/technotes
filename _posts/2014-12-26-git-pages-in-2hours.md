@@ -33,4 +33,38 @@ This tutorial expects you
 
 Here we go.
 
-Hang on, have you got a login on github yet? No? [Do it now](https://github.com/)! It might cost you 3min.
+Hang on, have you got a login on github yet? No? [Do it now](https://github.com/)! It might cost you 3min. 
+
+Now you need create a new repository for your website or blog. There are two types of repositories you will need to think of: user page or project page. They differ in use cases and you are free to create either of them. You can delete and try again your repositories as many times as you like. So don't be shy and try it out.
+
+ - A user can only create one user page. It can be considered hold the content about the user himself.
+ - A project page, literally, is focused on one project you run. For example, you might want to maintain two blogs, one for business, and one for personaly life. You don't want to mix them up, do you? There are no limit of amount of project pages you can create.
+
+There are other differences that I will cover later. The most difference between the two is the repository name. A project page name can be anything meaningful, like "greate_ideas_from_a_genius". But a user page name can only be in the patten of "username.github.io", replacing *username* with your own username. Now you see how come you can only have one user page! You are absolutely correct, there is no such a drop-down manu when you create a repository about which type of page to create. It comes up with the repository name. For snapshots and more details about repository creating, you can take a look at [this](http://www.thinkful.com/learn/a-guide-to-using-github-pages/). 
+
+Now I assume you have a valid github account and a repository ready. [Automatic generatoer](https://help.github.com/articles/creating-pages-with-the-automatic-generator/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
