@@ -42,7 +42,70 @@ Now you need create a new repository for your website or blog. There are two typ
 
 There are other differences that I will cover later. The most difference between the two is the repository name. A project page name can be anything meaningful, like "greate_ideas_from_a_genius". But a user page name can only be in the patten of "username.github.io", replacing *username* with your own username. Now you see how come you can only have one user page! You are absolutely correct, there is no such a drop-down manu when you create a repository about which type of page to create. It comes up with the repository name. For snapshots and more details about repository creating, you can take a look at [this](http://www.thinkful.com/learn/a-guide-to-using-github-pages/). 
 
-Now I assume you have a valid github account and a repository ready. [Automatic generatoer](https://help.github.com/articles/creating-pages-with-the-automatic-generator/)
+Now I assume you have a valid github account and a repository ready. We are going to build your blog locally, prettify it, and deploy it. Here I give all commands you need to type for your first go from scrach. I will tell you why doing so line by line. All commands have been verified working under Ubuntu  14.04 LTS.
+
+	//Install Jekyll	
+	sudo apt-get install ruby-dev
+	sudo apt-get install nodejs
+	sudo gem install jekyll
+	//Build your site using JekyllBootstrap
+	git clone https://github.com/plusjade/jekyll-bootstrap.git my-awesome-site
+	cd my-awesome-site
+	rake theme:install git="git://github.com/jekyllbootstrap/theme-mark-reid.git"
+	jekyll serve
+	//Install git
+	sudo apt-get install git
+	//Put everything under source control and upload them to Github
+	git init
+	git remote add origin https://github.com/username/my-awesome-site.git
+	git checkout --orphan gh-pages
+	git add *
+	git commit -m "Initial commit"
+	git push origin gh-pages
+
+###Jekyll Installtion
+I won't tell y ou for the first time how long it took me to install Jelyll locally. It is definitely longer than most of the tutorial tells you! After bunch of weird failurs and googling and excercising, the commands I show you here should let you run Jekyll pain-free in 2min. Again, I am talking about Ubuntu, 1404. Things might be different in other OS and versions.
+
+	sudo apt-get install ruby-dev
+
+You must have Ruby enviroment in your machine. If you are Rubyer, you might got it already. This command gave you everything Jelly needs. Why Ruby? Because Jelyll is written by Ruby. Some tutorials (even in Jekyll official site) might suggest you do apt-get install ruby, and/or apt-get install gem. That's not enough and you might end up with error "Failed to build gem native extension." This line equals to sudo apt-get install ruby-1.9.1-dev now. But I guess once Ruby updates itself, ruby-dev should still work but ruby-1.9.1-deb might not be.
+
+	sudo apt-get install nodejs
+Running Jelyll needs Javascript runtime engine. (Don't ask me what that means, I don't know and you don't have to know either.) NodeJs is one choice. And it always works. Just for info, NodeJs is a framework on top of Javascrip that allow Javascript run on server. Javascript normally is used at client side as the building block of the current WWW world. 
+
+	sudo gem install jekyll
+Gem is the package manager in Ruby, analog to apt-get for Ubuntu. Doing so you have Jekyll installed locally.
+	
+	sudo apt-get install git
+Now we install git in you machine if you havn't done so.
+
+git clone https://github.com/plusjade/jekyll-bootstrap.git my-awesome-site
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Automatic generatoer](https://help.github.com/articles/creating-pages-with-the-automatic-generator/)
 
 
 
