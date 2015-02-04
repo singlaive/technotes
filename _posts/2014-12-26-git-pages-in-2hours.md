@@ -42,7 +42,7 @@ Now you need create a new repository for your website or blog. There are two typ
 
 There are other differences that I will cover later. The most difference between the two is the repository name. A project page name can be anything meaningful, like "greate_ideas_from_a_genius". But a user page name can only be in the patten of "username.github.io", replacing *username* with your own username. Now you see how come you can only have one user page! You are absolutely correct, there is no such a drop-down manu when you create a repository about which type of page to create. It comes up with the repository name. For snapshots and more details about repository creating, you can take a look at [this](http://www.thinkful.com/learn/a-guide-to-using-github-pages/). 
 
-Now I assume you have a valid github account and a repository ready. We are going to build your blog locally, prettify it, and deploy it. Here I give all commands you need to type for your first go from scrach. I will tell you why doing so line by line. All commands have been verified working under Ubuntu  14.04 LTS.
+Now I assume you have a valid github account and a repository ready (say, in the name of my-awesome-site). We are going to build your blog locally, prettify it, and deploy it. Here I give all commands you need to type for your first go from scrach. I will tell you why doing so line by line. All commands have been verified working under Ubuntu  14.04 LTS.
 
 	//Install Jekyll	
 	sudo apt-get install ruby-dev
@@ -77,9 +77,29 @@ Running Jelyll needs Javascript runtime engine. (Don't ask me what that means, I
 Gem is the package manager in Ruby, analog to apt-get for Ubuntu. Doing so you have Jekyll installed locally.
 	
 	sudo apt-get install git
-Now we install git in you machine if you havn't done so.
+Now we have git installed in you machine if you havn't done so yet. Currently you have nothing in your local folder. You have the option that builds a static html blog manually, and upload it to your repository. But we are not going to do that because we will use Jekyll to relief the pain of maintaining a website. Therefore instead of creating a website from scrach, we do
+	git clone https://github.com/plusjade/jekyll-bootstrap.git my-awesome-site
+This command creates a subfolder of name my-awesome-site (can be anything) under your current folder, and download the source code of Jekyll-Bootstrap into this subfolder. Hang on, did I mention Jekyll-Bootstrap before? No? Well, some smart guy added a bunch of features and several nice looking thames based on Jekyll. I choosed it since I am very lazy to build up my own UI for the blog. I will show you how to do a bit customization afterwards. If you just want to try Jekyll itself, you need to replece the git link as:
+	jekyll new my-awesome-site
+Similarly, this Jekyll command create a subfolder, and copy al necessary files (whici is a subset of what we have above) into it. 
+Of course, now it is time to take a close look at how the website look like that Jekyll builds for you! We do:
 
-git clone https://github.com/plusjade/jekyll-bootstrap.git my-awesome-site
+	cd my-awesome-site
+	jekyll serve
+Now open one of your web browser, Chromium or Firefox etc., type in the address bar:
+	http://0.0.0.0:4000
+Hey not bad isn't it? If you like the current look you can start writing your new posts now. Buf if you want try something different, you can check [here](http://themes.jekyllbootstrap.com/). To apply different theme, for instance, you can change to mark-reid theme in this way:
+	rake theme:install git="git://github.com/jekyllbootstrap/theme-mark-reid.git"
+If you have not seen rake commande before, it is a Ruby utility analog to make command in general *unix world. You can find out a local file (my-awesome-site/Rakefile) provided along with Jekyll-bootstrap which downloads the theme files and adopts it for you in your site. Now you can try again see the new look. Oh, I am afraid you might need to type Ctrl+c firstly to interrupt Jekyll server process, then type `jekyll serve` again. Refresh your browser, like it?
+Suppose you do, well if not, repeat the above steps till you find out the one you do like. Now you have your lovely blog built and run locally. Next you do want to see it on internet I believe. Very simple, do (surely ctrl+c first, or open a new terminal window and go to your site folder):
+
+//Remove .git and reninit your own one!!!
+	git remote add origin https://github.com/username/my-awesome-site.git
+This lovely command link you local git repository to your remote one. It adds the remote repository and gives it a name origin. You can give it any meaningful name. Currently your local git repository 
+
+	git checkout --orphan gh-pages
+
+
 
 
 
