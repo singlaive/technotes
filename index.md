@@ -1,19 +1,6 @@
 ---
-layout: page 
-title: Coding, more coding!
-tagline: By 夜鸣剑
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
 ---
-{% include JB/setup %}
-
-{% for post in site.posts %}
-<div class = "card">
-  <h2>  {{ post.title }} </h2>
-  {{ post.content  | | split:'<!--break-->' | first }}
-<div class = "read_more">
-  Written on {{ post.date | date:"%d/%m/%Y" }}.
-  <a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}"> Read more&hellip;</a>
-</div>
-</div>
-<br>
-{% endfor %}
-

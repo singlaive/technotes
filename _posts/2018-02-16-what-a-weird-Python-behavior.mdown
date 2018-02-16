@@ -1,0 +1,59 @@
+---
+layout: post
+title: "What a weird Python behavior"
+description: "A pitfall in Python"
+category: Tutorial
+tags: [programming]
+---
+{% include JB/setup %}
+
+I read this quiz the other day,
+
+~~~~
+def f(x,l=[]):
+    for i in range(x):
+        l.append(i*i)
+    print(l) 
+f(2)
+f(3)
+~~~~
+
+What is the output of thest two runs?
+Well looks easy, I quickly give:
+~~~~
+[0, 1]
+[0, 1, 4]
+~~~~
+
+But no! When I tried it out, the result is:
+~~~~
+[0, 1]
+[0, 1, 0, 1, 4]
+~~~~
+
+What the hell? About variabiles in Python, what I understand is:
+* Variable is like a label, you can attach any number of labels to the same chunk of memory
+* In function, list is passed around as reference
+
+Yes, what happened practically is, in the second run, the memory that `l` sticks to contains `0` and `1` rather than empty. But it is wrong, isn't it? This behavior simply makes the function not reentrant, even it did not use any global variables, or any external resources etc. When you write `l=[]` in the signature part of a function, you do expect this local variable to be initialised properly, rather than values left by last run.
+
+I would say this is a pitfall, rather than a nice feature Python has.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
